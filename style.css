@@ -1,0 +1,14 @@
+.header-box {
+	background: #0a2342;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 120px;
+	width: 100%;
+}
+
+.intel-logo {
+	height: 80px;
+	width: auto;
+	display: block;
+}
