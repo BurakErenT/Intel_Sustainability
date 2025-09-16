@@ -6,6 +6,7 @@
 	box-sizing: border-box;
 	padding: 64px 0 64px 0;
 	min-height: 400px;
+  border-bottom: 6px solid #1769aa;
  }
 
 
@@ -17,12 +18,16 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
+  gap: 16px;
 }
 
 .header-content h1 {
 	color: white;
 	margin-top: 10px;
 	text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .header-content p {
@@ -30,6 +35,8 @@
 	max-width: 600px;
 	text-align: center;
 	margin-top: 10px;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 
@@ -37,6 +44,7 @@
 	height: 80px;
 	width: auto;
 	display: block;
+  margin-bottom: 8px;
 }
 
 /* Horizontal Timeline */
@@ -46,12 +54,16 @@
 	-webkit-overflow-scrolling: touch;
 	scroll-snap-type: x mandatory;
 	padding: 16px 0;
+  background: #f5f8fa;
+  border-top: 2px solid #e6ecf5;
 }
 
 .timeline-track {
 	display: flex;
 	gap: 16px;
 	padding: 0 16px 16px 16px;
+  min-width: 100vw;
+  box-sizing: border-box;
 }
 
 .timeline-card {
@@ -62,15 +74,31 @@
 	border-radius: 12px;
 	box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 	padding: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: transform 0.2s, box-shadow 0.2s;
+	position: relative;
+}
+
+.timeline-card:hover {
+	transform: translateY(-8px) scale(1.03);
+	box-shadow: 0 12px 32px rgba(23,105,170,0.18);
+	z-index: 2;
 }
 
 .timeline-card h2 {
 	margin: 0 0 4px 0;
+	font-size: 1.4rem;
+	color: #1769aa;
+	font-weight: 700;
 }
 
 .timeline-card h3 {
 	margin: 0 0 12px 0;
 	color: #0a2342;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .card-img {
@@ -80,4 +108,45 @@
 	border-radius: 8px;
 	margin-bottom: 12px;
 	background: #e6ecf5;
+	box-shadow: 0 2px 8px rgba(23,105,170,0.08);
+}
+
+@media (max-width: 900px) {
+	.header-content {
+		max-width: 98vw;
+		padding: 0 8px;
+	}
+	.timeline-track {
+		gap: 8px;
+		padding: 0 4px 12px 4px;
+	}
+	.timeline-card {
+		flex: 0 0 80vw;
+		min-width: 260px;
+		padding: 12px;
+	}
+	.card-img {
+		height: 120px;
+	}
+}
+
+@media (max-width: 600px) {
+	.header-box {
+		padding: 32px 0 32px 0;
+		min-height: 220px;
+	}
+	.header-content h1 {
+		font-size: 1.5rem;
+	}
+	.header-content p {
+		font-size: 1rem;
+	}
+	.timeline-card {
+		flex: 0 0 96vw;
+		min-width: 180px;
+		padding: 8px;
+	}
+	.card-img {
+		height: 80px;
+	}
 }
